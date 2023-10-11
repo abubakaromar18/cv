@@ -11,7 +11,7 @@ body {
     margin: 0;
 }
 #container {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: darkgrey;
     padding: 20px 40px;
     border-radius: 5px;
 }
@@ -23,14 +23,15 @@ body {
 
 .container p{
     text-decoration: none;
-    color: lightblue;
+    color: white;
 }
 
 .btn{
+    color: white;
     cursor: pointer;
     display: inline-block;
     width: 100%;
-    background: gray;
+    background: black;
     padding: 15px;
     font-family: inherit;
     font-size: 16px;
@@ -63,7 +64,7 @@ body {
 .form-control input:focus, 
 .form-control input:valid{
     outline: 0;
-    border-bottom-color: gray;
+    border-bottom-color: black;
 }
 .form-control input::placeholder
 {

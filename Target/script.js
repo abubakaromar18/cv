@@ -1,14 +1,24 @@
 function calculatePercentage() {
-    var num1 = parseFloat(document.getElementById('num1').value);
-    var num2 = parseFloat(document.getElementById('num2').value);
+    var amountNeeded = parseFloat(document.getElementById('num1').value);
+    var amountFilled = parseFloat(document.getElementById('num2').value);
 
-    if (isNaN(num1) || isNaN(num2)) {
+    if (isNaN(amountFilled) || isNaN(amountNeeded)) {
         document.getElementById('result').innerHTML = "Please enter valid numbers.";
         return;
     }
 
-    var total = num1 + num2;
-    var percentage = (num2 / total) * 100;
+    var total = amountNeeded + amountFilled;
+    var percentage = (amountFilled / total) * 100;
+    var amountLeft = (total * .8) - amountFilled;
 
-    document.getElementById('result').innerHTML = "The percentage is: " + percentage.toFixed(2) + "%";
+    if (percentage >= 80){
+        document.getElementById('container').style.backgroundColor = "green";
+        document.getElementById('result').innerHTML = "The percentage is: " + percentage.toFixed(2) + "%";
+        document.getElementById('need').innerHTML = "";
+    }
+    else{
+        document.getElementById('container').style.backgroundColor = "red";
+        document.getElementById('result').innerHTML = "The percentage is: " + percentage.toFixed(2) + "%";
+        document.getElementById('need').innerHTML = Math.round(amountLeft) + " units left to reach goal";
+    }
 }
